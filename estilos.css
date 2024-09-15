@@ -61,6 +61,17 @@ body {
         flex: 1 0 46%; /* Dos actividades por fila en pantallas medianas */
     }
 }
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
 
 @media (max-width: 500px) {
     .actividad {
