@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+#rutinas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.actividad {
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    flex: 1 0 21%;
+    box-sizing: border-box;
+    position: relative; /* Añadido para posicionar elementos internos */
+    overflow: hidden;   /* Para ocultar contenido que se sale del contenedor */
+}
+
+.actividad img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    transition: opacity 0.3s;
+}
+
+.actividad p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    transition: opacity 0.3s;
+}
+
+.actividad.completada img,
+.actividad.completada p {
+    opacity: 0.5;
+}
+
+.actividad.completada::after {
+    content: '✓ Completado';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 128, 0, 0.6); /* Overlay verde semi-transparente */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000;
+}
+
+@media (max-width: 800px) {
+    .actividad {
+        flex: 1 0 46%; /* Dos actividades por fila en pantallas medianas */
+    }
+}
+
+@media (max-width: 500px) {
+    .actividad {
+        flex: 1 0 100%; /* Una actividad por fila en pantallas pequeñas */
+    }
+}
